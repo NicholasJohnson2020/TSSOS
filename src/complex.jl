@@ -271,6 +271,12 @@ function blockcpop_mix(n, m, supp::Vector{Vector{Vector{Vector{UInt16}}}}, coe, 
             model = Model(optimizer_with_attributes(COSMO.Optimizer, "max_iter" => 10000))
         elseif solver == "SDPT3"
             model = Model(optimizer_with_attributes(SDPT3.Optimizer))
+        elseif solver == "ProxSDP"
+            model = Model(optimizer_with_attributes(ProxSDP.Optimizer))
+            set_optimizer_attributes(model,
+            "log_verbose" => true,
+            "tol_gap" => 1e-4,
+            "tol_feasibility" => 1e-4)
         else
             @error "The solver is currently not supported!"
             return nothing,nothing,nothing

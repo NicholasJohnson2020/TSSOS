@@ -79,7 +79,7 @@ version = "0.1.3"
 deps = ["Graphs"]
 git-tree-sha1 = "67a52ae443aad1124740530036b2ff69241bfab4"
 uuid = "60fd0770-a5cf-11ea-07c5-d789f1eae5cb"
-version = "0.4.0"
+version = "0.1.0"
 
 [[CodecBzip2]]
 deps = ["Bzip2_jll", "Libdl", "TranscodingStreams"]
